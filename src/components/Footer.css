@@ -1,0 +1,33 @@
+.app-footer {
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-top: 5px solid #e50914; /* Red border for a cool effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .telegram-link {
+    color: #e50914; /* Red color for the link */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+  }
+  
+  .telegram-link:hover {
+    color: #fff;
+    text-shadow: 0 0 8px #e50914; /* Glowing effect on hover */
+  }
+  
+  .footer-text {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #bbb;
+  }
+  

@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+import React from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import MovieDetailPage from './pages/MovieDetailPage';
+import SearchResults from './pages/SearchResults';
+import Header from './components/Header';
+import Footer from './components/Footer';
 import './App.css';
 
 function App() {
+  const location = useLocation();
+
+  // Show header for all pages except home
+  const showHeader = location.pathname !== '/';
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {showHeader && <Header />}
+      
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/movie/:movieId" element={<MovieDetailPage />} />
+        <Route path="/search" element={<SearchResults />} />
+        {/* Add other routes here */}
+      </Routes>
+      
+      <Footer />  {/* Always show footer */}
     </div>
   );
 }
