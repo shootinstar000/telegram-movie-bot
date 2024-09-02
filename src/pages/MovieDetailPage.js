@@ -12,6 +12,7 @@ const MovieDetailPage = () => {
   const [movie, setMovie] = useState(null);
   const [trailerKey, setTrailerKey] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [selectedLanguage, setSelectedLanguage] = useState('multilang'); // Default selection
 
   useEffect(() => {
     const fetchMovieDetails = async () => {
@@ -53,8 +54,15 @@ const MovieDetailPage = () => {
               <p className="movie-overview">{movie.overview}</p>
               <p className="movie-rating">Rating: {movie.vote_average}</p>
               <div className="movie-actions">
-                <button className="btn-play">Play</button>
-                <button className="btn-watchlist">Add to Watchlist</button>
+                <button className="btn-download">Watch Now</button>
+                <select
+                  className="language-select"
+                  value={selectedLanguage}
+                  onChange={(e) => setSelectedLanguage(e.target.value)}
+                >
+                  <option value="multilang">Multilang</option>
+                  <option value="originallang">Original Lang</option>
+                </select>
               </div>
             </div>
           </div>
